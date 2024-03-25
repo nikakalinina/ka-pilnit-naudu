@@ -1,0 +1,53 @@
+def main():
+    print("Hello there!")
+    choice = input("Choose: \n1. Start looking for a job\n2. Go to site\n3. Quit\n")
+
+    if choice == "1":
+        search_job()
+    elif choice == "2":
+        print("Site: https://www.youtube.com/")
+    elif choice == "3":
+        print("Goodbye!")
+        return  
+    else:
+        print("NO!. Choose 1, 2, or 3.")
+        main()
+
+def search_job():
+    city = input("Which city are you from: ")
+    hours = choose_hours()
+
+    print("Job list:")
+    if hours == "Everyday":
+        print("1. Promoter")
+        print("2. Tutor")
+        print("3. Cleaner")
+    elif hours == "Weekends":
+        print("1. Promoter")
+        print("2. Salesperson in a supermarket")
+        print("3. Waiter")
+        print("4. Consultant")
+    
+    choice = input("Choose: \n1. Go back to main menu\n2. Quit\n")
+    if choice == "1":
+        main()  
+    elif choice == "2":
+        print("Goodbye!")
+        return  
+    else:
+        print("NO!. Choose 1 or 2.")
+        search_job()
+
+def choose_hours():
+    choice = input("How much time can you work: \n1. Almost everyday\n2. Only on weekends\n")
+
+    if choice == "1":
+        return "Everyday"
+    elif choice == "2":
+        return "Weekends"
+    else:
+        print("NO!. Choose 1 or 2.")
+        return choose_hours()
+
+if __name__ == "__main__":
+    main()
